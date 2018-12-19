@@ -2,6 +2,5 @@
 Yet Another Useless Box
 
 # Instructions
-## Composants
-## Design de la Box
-## Assemblage
+Schéma électrique
+![alt text](https://raw.githubusercontent.com/fablab-chaux-de-fonds/yaub/master/schema.svg)
