@@ -22,6 +22,9 @@ while True:
 	led.value = True
 	while button.value:
 		time.sleep(0.01)
+	for i in range(50):
+		time.sleep(0.01)
+		my_servo.angle = i
 	my_servo.angle = 100
 	led.value = False
 	while not button.value:
