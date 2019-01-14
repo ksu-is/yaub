@@ -12,7 +12,7 @@ button.direction = digitalio.Direction.INPUT
 button.pull = digitalio.Pull.UP
 
 # create a PWMOut object on Pin A2.
-pwm = pulseio.PWMOut(board.D0, duty_cycle=2 ** 15, frequency=50)
+pwm = pulseio.PWMOut(board.D2, duty_cycle=2 ** 15, frequency=50)
 
 # Create a servo object, my_servo.  
 my_servo = servo.Servo(pwm)
@@ -22,7 +22,7 @@ while True:
 	led.value = True
 	while button.value:
 		time.sleep(0.01)
-	for i in range(50):
+	for i in range(30):
 		time.sleep(0.01)
 		my_servo.angle = i
 	my_servo.angle = 100
