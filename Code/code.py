@@ -1,32 +1,17 @@
 import time
-import board
-import pulseio
-import digitalio
-from adafruit_motor import servo
+import random
 
-led = digitalio.DigitalInOut(board.D13)
-led.direction = digitalio.Direction.OUTPUT
+from gpiozero import Servo
+from time import sleep
+count = 0
+#servo = Servo(25)
 
-button = digitalio.DigitalInOut(board.D1)
-button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP
+#Table of behaviors 1
+#while count < 5:
+	#gentle switch
+#	servo.max()
+#	sleep(1)
+#	servo.min()
 
-# create a PWMOut object on Pin A2.
-pwm = pulseio.PWMOut(board.D2, duty_cycle=2 ** 15, frequency=50)
-
-# Create a servo object, my_servo.  
-my_servo = servo.Servo(pwm)
-
-while True:
-	my_servo.angle = 0
-	led.value = True
-	while button.value:
-		time.sleep(0.01)
-	for i in range(30):
-		time.sleep(0.01)
-		my_servo.angle = i
-	my_servo.angle = 100
-	led.value = False
-	while not button.value:
-		time.sleep(0.01)
-
+number = int(random.randint(1,5))
+print(number)
